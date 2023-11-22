@@ -49,12 +49,4 @@ df2 |>
   select(url, destfile) |> 
   pwalk(~download.file(url = .x, destfile = .y, mode = "wb")) # downloading all the files at the same time. To add another argument such as mode we use ~download.file() instead of just download.file
 
-#safely(download.file(df2$url[1], destfile = df2$destfile[1]))
-
- # download.file(
- #   url = "https://bqk-kos.org/repository/docs/time_series/01%20Financial%20Corporations%20Survey.xls", 
- #   destfile = "C:/Users/PC/Desktop/testfile.xls",
- #   mode = "wb" # add mode = "wb" to pwalk so that the downloads work! (16.11.2023 - comment to self; 21.11.2023 - fixed it; might require a different fix for Mac)
- # )
-
 
